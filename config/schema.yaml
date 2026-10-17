@@ -1,0 +1,15 @@
+project_title: "CSV Cleaner and Parquet Data Lake"
+
+deduplicate_on:
+  - record_id
+
+columns:
+  name:
+   type: string
+   nullable: False
+  age:
+   type: int
+   nullable: False
+  city:
+   type: string
+   nullable: False
