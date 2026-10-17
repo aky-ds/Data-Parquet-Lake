@@ -8,7 +8,7 @@ from src.transform import (
     coerce_record,
     enrich_record,
 )
-from src.validation import validate_record
+from src.validation import validate_records
 from src.exporters import export_json, export_csv, export_parquet, save_quarantine
 
 
@@ -60,7 +60,7 @@ def run_pipeline(
         try:
             record = coerce_record(raw_record, schema)
 
-            errors = validate_record(record, schema)
+            errors = validate_records(record, schema)
 
             if errors:
                 raise ValueError("; ".join(errors))

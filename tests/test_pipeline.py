@@ -1,11 +1,11 @@
 import unittest
-
+from io import BytesIO
 from src.transform import (
     normalize_header,
     generate_record_id,
     coerce_value,
 )
-from src.validation import validate_record
+from src.validation import validate_records
 
 
 class TestTransform(unittest.TestCase):
@@ -44,7 +44,7 @@ class TestTransform(unittest.TestCase):
             }
         }
 
-        errors = validate_record(
+        errors = validate_records(
             {"name": None},
             schema,
         )
